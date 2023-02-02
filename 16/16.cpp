@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<algorithm>
+#include<string.h>
 using namespace std;
 /// LEETCODE 16
 /// 给你一个整数数组 nums ，判断是否存在三元组 [nums[i], nums[j], nums[k]] 满足 i != j、i != k 且 j != k ，同时还满足 nums[i] + nums[j] + nums[k] == 0 。请
@@ -86,6 +87,23 @@ using namespace std;
     }
      return ret;
         }
+
+void next(char *P,int N[])//在kmp算法中对模式串进行处理
+{
+    int m=strlen(P);
+    N[0]=0;
+    int i=1,j=0;;;;
+    while(i<m)//也就是，i表示当前所在位置，
+    {
+        if(P[i]==P[j])
+        {
+            N[i++]=j+1;
+            j++;
+        }
+        else if(j>0) j=N[j-1];
+        else N[i++]=0;
+    }
+}
 int main(void)
 {
     int n;
