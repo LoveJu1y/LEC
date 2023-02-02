@@ -8,6 +8,8 @@ int num[]={-1,0,1,2,-1,-4};
 vector <vector<int> >ret;
 int target=2;
 int main(void)
+
+
 {
     vector<int>nums(num,num+6); int size=nums.size();
     sort(nums.begin(),nums.end());
