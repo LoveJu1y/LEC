@@ -88,5 +88,13 @@ using namespace std;
         }
 int main(void)
 {
-    cout<<1<<endl;
+    int n;
+    cin>>n;
+    long long int f=1,g=0;
+    while(n-->0)
+    {
+        g+=f;
+        f=g-f;
+    }
+    cout<<g;
 }
