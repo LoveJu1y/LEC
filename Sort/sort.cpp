@@ -1,4 +1,5 @@
 #include<iostream>
+#include<ctime>
 using namespace std;
 
 //这一部分主要用于稍微熟练以下常见的集中排序
@@ -84,9 +85,11 @@ right就停在begin，left大于right，直接退出，吧begin和right交换就
 
 */
 //当然还可以加入随机数种子，随机效果更好一点。
+
 int main(void)
 {
     int *a;
+    srand(time(0));
     a=new int[10]{15,23,4,56,44,55,7,122,35,69};
     int b[4]={5,2,3,1};
     quicksort(b,0,3);
