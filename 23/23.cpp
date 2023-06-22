@@ -20,36 +20,40 @@ void  print(ListNode*list)
     }
 }
 ListNode* mergeKLists(vector<ListNode*>& lists) {
-    
-        int num=lists.size();
-    ListNode *ide;
-    bool flag=1;
-    while(flag)
+         int num=lists.size();
+        //  if(num==0)
+        //  return nullptr;
+        //  if(num==1)
+        //  return lists[0];
+    ListNode *ide;ListNode*ret;
+    ide=new ListNode(0);
+    ret=ide;
+    int flag=0;
+    while(flag<num)
     {
-        flag=0;
+       int k=0;
         for(int i=0;i<num;i++)
         {
-            if(lists[i]==NULL) continue;
-            int k=i;
-            for(int j=i+1;j<num;j++)
-            {
-                if(lists[j]==NULL) continue;
-                if(lists[k]->val<lists[j]->val)
-                k=j;
-            }
-            if(i!=k)
-            {
-                ide=lists[k];
+            if(lists[i]!=nullptr) 
+           { k=i;break;}
+        }
+        for(int i=k;i<num;i++)
+        {
+           
+            if(lists[i]==nullptr) continue;  
+            if(lists[i]->val<lists[k]->val)
+            k=i;
+        }
+                //cout<<lists[k]->val;
+                if(lists[k]){
+                ide->next=lists[k];
                 ide=ide->next;
                 lists[k]=lists[k]->next;
-                flag=1;
-            }
-        }
-        
+                } if(lists[k]==nullptr)flag++;
+
     }
-    print(ide);
-    return ide;
-}
+    return ret->next;
+    }
 int main(void)
 {
     vector<ListNode*>lists;
@@ -78,6 +82,7 @@ int main(void)
     lists.push_back(aaa);
     lists.push_back(bbb);
     lists.push_back(ccc);
+    a=c;
    // mergeKLists(lists);
     print(a);
 }
