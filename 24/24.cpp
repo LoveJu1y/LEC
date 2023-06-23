@@ -26,10 +26,10 @@ ListNode* swapPairs(ListNode * head)
         now = tmp;
         
     }
-    while(head){
-        std::cout<<head->val<<std::endl;
-        head = head ->next;
-    }
+    // while(head){
+    //     std::cout<<head->val<<std::endl;
+    //     head = head ->next;
+    // }
     return head;
 
 }
